@@ -1,0 +1,50 @@
+/give Dev tricksandtrials:diamond_spike_block
+/give Dev tricksandtrials:stone_spike_block
+/give Dev tricksandtrials:iron_spike_block
+/give Dev tricksandtrials:gold_spike_block
+/give Dev tricksandtrials:netherite_spike_block
+/time set day
+/give Dev tricksandtrials:netherite_spike_block
+/give Dev tricksandtrials:wood_spike_block
+/give Dev tricksandtrials:diamond_spike_block
+/give Dev tricksandtrials:netherite_spike_block
+/tick rate 10000
+/clear
+/effect give Dev minecraft:night_vision infinite
+/clear
+/give Dev tricksandtrials:boommace
+/gamemode survival
+/gamemode creative
+/effect give Dev minecraft:night_vision infinite
+/gamemode survival
+/gamemode creative
+/give Dev tricksandtrials:boommace
+/give Dev tricksandtrials:explosive_arrow
+/gamemode survival
+/time set day
+/give Dev tricksandtrials:explosive_arrow
+/give Dev bow
+/give Dev minecraft:arrow 64
+/give Dev tricksandtrials:explosive_arrow 6400
+/give Dev tricksandtrials:explosive_arrow 1600
+/gamemode creative
+/give Dev minecraft:iron_axe
+/give Dev minecraft:iron_pickaxe
+/give Dev tricksandtrials:diamond_spike_block
+/give Dev tricksandtrials:wood_spike_block
+/give Dev tricksandtrials:explosive_arrow 1600
+/gamemode survival
+/give Dev tricksandtrials:boommace
+/effect give Dev minecraft:instant_health infinite
+/effect give Dev minecraft:saturation infinite
+/effect give Dev minecraft:fire_resistance infinite
+/effect give Dev minecraft:resistance infinite
+/give Dev tricksandtrials:wood_spike_block
+/gamemode survival
+/gamemode creative
+/give Dev tricksandtrials:explosive_arrow 1600
+/gamemode survival
+/gamemode creative
+/gamemode survival
+/give Dev tricksandtrials:explosive_arrow
+/give Dev tricksandtrials:explosive_arrow 1599

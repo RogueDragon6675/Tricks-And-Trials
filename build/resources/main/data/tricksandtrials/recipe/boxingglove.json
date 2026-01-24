@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:red_wool"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    },
+    "S": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    " # ",
+    "#/#",
+    "S#S"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tricksandtrials:boxingglove"
+  }
+}

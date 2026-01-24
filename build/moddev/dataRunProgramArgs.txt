@@ -1,0 +1,29 @@
+# Main Class
+cpw.mods.bootstraplauncher.BootstrapLauncher
+
+# NeoForge Run-Type Program Arguments
+--launchTarget
+forgedatadev
+--assetIndex
+17
+--assetsDir
+/Users/jacksonbrogan/.gradle/caches/neoformruntime/assets
+--gameDir
+.
+--fml.fmlVersion
+4.0.41
+--fml.mcVersion
+1.21.1
+--fml.neoForgeVersion
+21.1.209
+--fml.neoFormVersion
+20240808.144430
+
+# User Supplied Program Arguments
+--mod
+tricksandtrials
+--all
+--output
+"/Users/jacksonbrogan/Desktop/Tricks And Trials/src/generated/resources"
+--existing
+"/Users/jacksonbrogan/Desktop/Tricks And Trials/src/main/resources"

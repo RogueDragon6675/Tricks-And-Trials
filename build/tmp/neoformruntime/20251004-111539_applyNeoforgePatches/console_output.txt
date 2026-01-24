@@ -1,0 +1,29 @@
+--------------------------------------------------------------------------------
+
+Command-Line:
+ - /Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin/java
+ - -jar
+ - /Users/jacksonbrogan/.gradle/caches/modules-2/files-2.1/io.codechicken/DiffPatch/2.0.0.36/5b32f9baa0c0371c0dc80a3b88794960af0c6b44/DiffPatch-2.0.0.36-all.jar
+ - /Users/jacksonbrogan/.gradle/caches/neoformruntime/intermediate_results/patch_6a1711eb33b89e3c92babe918400ba0bbd06d1ba_output.zip
+ - /Users/jacksonbrogan/.gradle/caches/modules-2/files-2.1/net.neoforged/neoforge/21.1.209/b1b8df29d590d0b19f597da6ba379df5f2221c9/neoforge-21.1.209-userdev.jar
+ - --prefix
+ - patches/
+ - --patch
+ - --archive
+ - ZIP
+ - --output
+ - ./output.zip
+ - --log-level
+ - WARN
+ - --mode
+ - OFFSET
+ - --archive-rejects
+ - ZIP
+ - --reject
+ - ./outputRejects.zip
+ - --base-path-prefix
+ - a/
+ - --modified-path-prefix
+ - b/
+--------------------------------------------------------------------------------
+
