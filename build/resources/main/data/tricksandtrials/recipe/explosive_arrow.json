@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "S",
+    "A"
+  ],
+  "key": {
+    "#": "minecraft:tnt",
+    "S": "minecraft:string",
+    "A": "minecraft:arrow"
+  },
+  "result": {
+    "count": 4,
+    "id": "tricksandtrials:explosive_arrow"}
+}

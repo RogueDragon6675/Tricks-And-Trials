@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#A#",
+    "GLG",
+    "#E#"
+  ],
+  "key": {
+    "#": "minecraft:tnt",
+    "A": "minecraft:arrow",
+    "G": "minecraft:gunpowder",
+    "L": "minecraft:lead",
+    "E": "minecraft:end_crystal"
+  },
+  "result": {
+    "count": 3,
+    "id": "tricksandtrials:nuke"
+  }
+}

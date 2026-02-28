@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "nNn",
+    "QMQ",
+    "nTn"
+  ],
+  "key": {
+    "n": "minecraft:netherite_ingot",
+    "N": "minecraft:nether_star",
+    "Q": "minecraft:quartz",
+    "M": "minecraft:mace",
+    "T": "minecraft:tnt"
+  },
+  "result": {  "count": 1,
+    "id": "tricksandtrials:boommace"}}
+}

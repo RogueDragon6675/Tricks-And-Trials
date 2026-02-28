@@ -2,11 +2,17 @@
   "item.tricksandtrials.boxingglove": "Boxing Glove",
   "item.tricksandtrials.boommace": "Boom Mace",
   "item.tricksandtrials.explosive_arrow": "TNT Arrow",
+  "item.tricksandtrials.stopwatch": "Stop Watch",
+  "item.tricksandtrials.nuke": "Nuke Arrow",
   "block.tricksandtrials.wood_spike_block": "Wood Spike Block",
   "block.tricksandtrials.stone_spike_block": "Stone Spike Block",
   "block.tricksandtrials.gold_spike_block": "Gold Spike Block",
   "block.tricksandtrials.iron_spike_block": "Iron Spike Block",
   "block.tricksandtrials.diamond_spike_block": "Diamond Spike Block",
-  "block.tricksandtrials.netherite_spike_block": "Netherite Spike Block"
+  "block.tricksandtrials.netherite_spike_block": "Netherite Spike Block",
+  "enchantment.tricksandtrials.quick_shot": "Quick Shot",
+  "enchantment.tricksandtrials.quick_shot.desc": "Shoots arrows automatically like a minigun",
+  "enchantment.tricksandtrials.homing": "Homing",
+  "enchantment.tricksandtrials.homing.desc": "Shoots arrows that lock onto the nearets entity"
 
 }

@@ -3,6 +3,7 @@ package com.jackson.tricksandtrials;
 import com.jackson.tricksandtrials.block.ModBlocks;
 import com.jackson.tricksandtrials.entity.ModEntities;
 import com.jackson.tricksandtrials.item.ModItems;
+import com.jackson.tricksandtrials.item.custom.ExplosiveArrowItem;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -68,6 +69,10 @@ public class TricksandTrials {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.COMBAT){
             event.accept(ModItems.BOXINGGLOVE);
+            event.accept(ModItems.EXPLOSIVE_ARROW);
+            event.accept(ModItems.STOPWATCH);
+            event.accept(ModItems.BOOMMACE);
+            event.accept(ModItems.NUKE);
         }
         if (event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS)
         {

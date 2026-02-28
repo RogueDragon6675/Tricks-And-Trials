@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "tricksandtrials:explosive_arrow"
+    "tricksandtrials:explosive_arrow",
+    "tricksandtrials:nuke"
   ]
 }

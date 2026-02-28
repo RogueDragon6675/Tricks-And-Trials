@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#N#",
+    "ECE",
+    "OgO"
+  ],
+  "key": {
+    "#": "minecraft:diamond",
+    "N": "minecraft:nether_star",
+    "E": "minecraft:end_crystal",
+    "C": "minecraft:clock",
+    "O": "minecraft:obsidian",
+    "g": "minecraft:gold_ingot"
+  },
+  "result":
+  {  "count": 1,
+  "id": "tricksandtrials:stopwatch"}
+}
