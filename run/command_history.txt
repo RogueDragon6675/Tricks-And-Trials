@@ -1,4 +1,3 @@
-/give Dev tricksandtrials:wood_spike_block
 /give Dev tricksandtrials:explosive_arrow 1600
 /gamemode survival
 /give Dev tricksandtrials:boommace
@@ -48,3 +47,4 @@
 /enchant Dev tricksandtrials:homing 5
 /enchant Dev tricksandtrials:homing 3
 /enchant Dev tricksandtrials:quick_shot 5
+/weather rain

@@ -1,10 +1,7 @@
 package com.jackson.tricksandtrials.item;
 
 import com.jackson.tricksandtrials.TricksandTrials;
-import com.jackson.tricksandtrials.item.custom.BoomMace;
-import com.jackson.tricksandtrials.item.custom.BoxingGlove;
-import com.jackson.tricksandtrials.item.custom.ExplosiveArrowItem;
-import com.jackson.tricksandtrials.item.custom.StopWatch;
+import com.jackson.tricksandtrials.item.custom.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Tiers;
 import net.neoforged.bus.EventBus;
@@ -28,7 +25,15 @@ public static final DeferredItem<Item> STOPWATCH = ITEMS.register("stopwatch", (
     public static final DeferredItem<Item> NUKE = ITEMS.register("nuke",
             () -> new ExplosiveArrowItem(new Item.Properties().stacksTo(3),100,true));
 
+    public static final DeferredItem<Item> WARRIORS_AXE = ITEMS.register("warriors_axe",
+            () -> new WarriorsAxe(new Item.Properties().stacksTo(1), Tiers.NETHERITE));
+
+    public static final DeferredItem<Item> WARRIORS_BOW = ITEMS.register("warriors_bow",
+            () -> new WarriorsBow(new Item.Properties().stacksTo(1)));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
+
+
 }

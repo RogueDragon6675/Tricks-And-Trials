@@ -73,6 +73,8 @@ public class TricksandTrials {
             event.accept(ModItems.STOPWATCH);
             event.accept(ModItems.BOOMMACE);
             event.accept(ModItems.NUKE);
+            event.accept(ModItems.WARRIORS_AXE);
+            event.accept(ModItems.WARRIORS_BOW);
         }
         if (event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS)
         {
