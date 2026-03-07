@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "minecraft:block/diamond_block"
-  }
+  "parent": "tricksandtrials:block/diamond_spike_block"
 }

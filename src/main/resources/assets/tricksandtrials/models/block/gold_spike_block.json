@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "tricksandtrials:block/template_spike",
   "textures": {
-    "all": "minecraft:block/gold_block"
+    "all": "minecraft:block/gold_block",
+    "particle": "minecraft:block/gold_block"
   }
 }
