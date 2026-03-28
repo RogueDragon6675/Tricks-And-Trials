@@ -1,7 +1,7 @@
 {
   "parent": "tricksandtrials:block/template_spike",
   "textures": {
-    "all": "minecraft:block/gold_ore",
-    "particle": "minecraft:block/gold_ore"
+    "all": "minecraft:block/gold_block",
+    "particle": "minecraft:block/gold_block"
   }
 }

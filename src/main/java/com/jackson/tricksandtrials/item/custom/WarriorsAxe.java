@@ -1,6 +1,7 @@
 package com.jackson.tricksandtrials.item.custom;
 
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.monster.Evoker;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.context.UseOnContext;
@@ -15,6 +16,9 @@ public class WarriorsAxe extends AxeItem {
         return super.useOn(context);
     }
     public void createSonicBoom()
-    {}
+    {
+        Evoker
+
+    }
     
 }
