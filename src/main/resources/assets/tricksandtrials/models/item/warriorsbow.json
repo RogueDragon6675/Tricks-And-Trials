@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld_bow",
+  "textures": {
+    "layer0": "tricksandtrials:item/warriorsbow"
+  }
+}

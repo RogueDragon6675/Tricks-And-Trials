@@ -25,10 +25,10 @@ public static final DeferredItem<Item> STOPWATCH = ITEMS.register("stopwatch", (
     public static final DeferredItem<Item> NUKE = ITEMS.register("nuke",
             () -> new ExplosiveArrowItem(new Item.Properties().stacksTo(3),100,true));
 
-    public static final DeferredItem<Item> WARRIORS_AXE = ITEMS.register("warriors_axe",
+    public static final DeferredItem<Item> WARRIORS_AXE = ITEMS.register("warriorsaxe",
             () -> new WarriorsAxe(new Item.Properties().stacksTo(1), Tiers.NETHERITE));
 
-    public static final DeferredItem<Item> WARRIORS_BOW = ITEMS.register("warriors_bow",
+    public static final DeferredItem<Item> WARRIORS_BOW = ITEMS.register("warriorsbow",
             () -> new WarriorsBow(new Item.Properties().stacksTo(1)));
 
     public static void register(IEventBus eventBus) {

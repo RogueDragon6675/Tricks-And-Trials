@@ -1,25 +1,3 @@
-/tick unfreeze
-/tick freeze
-/tick unfreeze
-/tick freeze
-/tick unfreeze
-/tick freeze
-/tick unfreeze
-/tick freeze
-/tick unfreeze
-/effect give Dev minecraft:night_vision infinite
-/tick freeze
-/tick unfreeze
-/clear
-/give Dev tricksandtrials:nuke 100
-/gamemode survival
-/gamemode creative
-/enchant Dev tricksandtrials:quick_shot
-/enchant Dev tricksandtrials:quick_shot 5
-/enchant Dev tricksandtrials:quick_shot 3
-/enchant Dev tricksandtrials:quick_shot 2
-/enchant Dev tricksandtrials:quick_shot 1
-/enchant Dev tricksandtrials:quick_shot 3
 /enchant Dev tricksandtrials:homing
 /enchant Dev tricksandtrials:homing 5
 /enchant Dev tricksandtrials:quick_shot 5
@@ -48,3 +26,25 @@
 /effect give Dev minecraft:night_vision infinite 0 true
 /effect clear Dev minecraft:resistance
 /effect clear Dev minecraft:absorption
+/effect give Dev minecraft:instant_health infinite
+/gamemode survival
+/gamemode creative
+/tick rate 5
+/gamemode survival
+/locate biome #c:is_spooky
+/place structure minecraft:mansion
+/effect give Dev minecraft:night_vision infinite
+/locate biome minecraft:dark_forest
+/tp @s 1278 71 401
+/locate biome minecraft:dark_forest
+/gamemode spectator
+/locate structure tricksandtrials:boss_battle
+/tp @s -320 ~ 144
+/effect give Dev minecraft:night_vision infinite
+/place jigsaw minecraft:village/common/butcher_animals
+/place structure minecraft:ancient_city
+/effect give Dev minecraft:night_vision infinite
+/time set midnight
+/effect clear
+/clearw
+/clear

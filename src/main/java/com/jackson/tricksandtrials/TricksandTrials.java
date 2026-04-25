@@ -4,6 +4,7 @@ import com.jackson.tricksandtrials.block.ModBlocks;
 import com.jackson.tricksandtrials.entity.ModEntities;
 import com.jackson.tricksandtrials.item.ModItems;
 import com.jackson.tricksandtrials.item.custom.ExplosiveArrowItem;
+import com.jackson.tricksandtrials.worldgen.ModStructures;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -53,6 +54,7 @@ public class TricksandTrials {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModEntities.register(modEventBus);
+        ModStructures.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
