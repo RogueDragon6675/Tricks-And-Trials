@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:item/handheld_bow",
+  "parent": "minecraft:item/crossbow",
   "textures": {
     "layer0": "tricksandtrials:item/warriorsbow"
   }

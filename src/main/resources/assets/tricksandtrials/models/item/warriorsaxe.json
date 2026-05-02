@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:item/handheld_axe",
+  "parent": "minecraft:item/handheld",
   "textures": {
     "layer0": "tricksandtrials:item/warriorsaxe"
   }
