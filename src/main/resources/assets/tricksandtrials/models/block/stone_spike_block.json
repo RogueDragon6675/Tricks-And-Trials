@@ -2,6 +2,6 @@
   "parent": "tricksandtrials:block/template_spike",
   "textures": {
     "all": "minecraft:block/stone",
-    "particles" : "minecraft:block/stone_block"
+    "particle": "minecraft:block/stone"
   }
 }

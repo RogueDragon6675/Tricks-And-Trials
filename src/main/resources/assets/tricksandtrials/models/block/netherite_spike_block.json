@@ -2,6 +2,6 @@
   "parent": "tricksandtrials:block/template_spike",
   "textures": {
     "all": "tricksandtrials:block/netherite_spike",
-    "particles" : "minecraft:block/netherite_block"
+    "particle" : "minecraft:block/netherite_block"
   }
 }

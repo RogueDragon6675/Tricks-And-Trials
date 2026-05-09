@@ -1,6 +1,8 @@
 package com.jackson.tricksandtrials.block.custom;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.BlockGetter;
@@ -64,15 +66,29 @@ public class SpikeBlock extends Block {
     public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
         float extra = getFallDamageExtra();
         entity.causeFallDamage(fallDistance, extra, level.damageSources().stalagmite());
+        spawnHitParticles(level, pos, entity, 12);
         super.fallOn(level, state, pos, entity, fallDistance);
     }
 
     @Override
     public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
         float step = getStepDamage();
-        if(!entity.isSteppingCarefully() && entity instanceof LivingEntity) {
+        if (!entity.isSteppingCarefully() && entity instanceof LivingEntity) {
             entity.hurt(level.damageSources().cactus(), step);
+            spawnHitParticles(level, pos, entity, 1);
         }
         super.stepOn(level, pos, state, entity);
+    }
+
+    /** Spawns blood/crit particles at the entity's feet on the server so all clients see them. */
+    private void spawnHitParticles(Level level, BlockPos pos, Entity entity, int count) {
+        if (!(level instanceof ServerLevel serverLevel)) return;
+        double cx = pos.getX() + 0.5;
+        double cy = pos.getY() + 1.0;
+        double cz = pos.getZ() + 0.5;
+        serverLevel.sendParticles(ParticleTypes.DAMAGE_INDICATOR, cx, cy, cz,
+                count, 0.3, 0.2, 0.3, 0.05);
+        serverLevel.sendParticles(ParticleTypes.CRIT, cx, cy + 0.1, cz,
+                count, 0.2, 0.15, 0.2, 0.1);
     }
 }

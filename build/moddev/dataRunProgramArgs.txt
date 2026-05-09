@@ -7,7 +7,7 @@ forgedatadev
 --assetIndex
 17
 --assetsDir
-/Users/jacksonbrogan/.gradle/caches/neoformruntime/assets
+C:\\Users\\darry\\.gradle\\caches\\neoformruntime\\assets
 --gameDir
 .
 --fml.fmlVersion
@@ -24,6 +24,6 @@ forgedatadev
 tricksandtrials
 --all
 --output
-"/Users/jacksonbrogan/Desktop/Tricks And Trials/src/generated/resources"
+N:\\Tricks-And-Trials\\src\\generated\\resources
 --existing
-"/Users/jacksonbrogan/Desktop/Tricks And Trials/src/main/resources"
+N:\\Tricks-And-Trials\\src\\main\\resources

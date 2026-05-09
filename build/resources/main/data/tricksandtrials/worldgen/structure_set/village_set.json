@@ -1,0 +1,16 @@
+{
+  "structures": [
+    {
+      "structure": "tricksandtrials:village",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 34,
+    "separation": 8,
+    "salt": 4829103,
+    "spread_type": "linear",
+    "locate_offset": [0, 0, 0]
+  }
+}

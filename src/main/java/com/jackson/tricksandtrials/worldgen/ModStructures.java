@@ -2,6 +2,7 @@ package com.jackson.tricksandtrials.worldgen;
 
 import com.jackson.tricksandtrials.TricksandTrials;
 import com.jackson.tricksandtrials.worldgen.custom.BossBattleStructure;
+import com.jackson.tricksandtrials.worldgen.custom.VillageStructure;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.levelgen.structure.StructureType;
 import net.neoforged.bus.api.IEventBus;
@@ -15,5 +16,9 @@ public class ModStructures {
         STRUCTURE_TYPES.register(bus);
     }
 
-    public static final DeferredHolder<StructureType<?>, StructureType<BossBattleStructure>>   BOSS_BATTLE_STRUCTURE = STRUCTURE_TYPES.register("boss_battle",() -> () -> BossBattleStructure.CODEC);
+    public static final DeferredHolder<StructureType<?>, StructureType<BossBattleStructure>> BOSS_BATTLE_STRUCTURE =
+            STRUCTURE_TYPES.register("boss_battle", () -> () -> BossBattleStructure.CODEC);
+
+    public static final DeferredHolder<StructureType<?>, StructureType<VillageStructure>> VILLAGE_STRUCTURE =
+            STRUCTURE_TYPES.register("village", () -> () -> VillageStructure.CODEC);
 }

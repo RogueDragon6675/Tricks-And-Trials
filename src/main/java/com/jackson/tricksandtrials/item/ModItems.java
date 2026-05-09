@@ -4,11 +4,9 @@ import com.jackson.tricksandtrials.TricksandTrials;
 import com.jackson.tricksandtrials.item.custom.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Tiers;
-import net.neoforged.bus.EventBus;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import com.jackson.tricksandtrials.item.ModTiers;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(TricksandTrials.MODID);
