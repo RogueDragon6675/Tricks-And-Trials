@@ -15,6 +15,7 @@
   "enchantment.tricksandtrials.quick_shot": "Quick Shot",
   "enchantment.tricksandtrials.quick_shot.desc": "Shoots arrows automatically like a minigun",
   "enchantment.tricksandtrials.homing": "Homing",
-  "enchantment.tricksandtrials.homing.desc": "Shoots arrows that lock onto the nearets entity"
+  "enchantment.tricksandtrials.homing.desc": "Shoots arrows that lock onto the nearets entity",
+  "key.tricksandtrials.bow": "Warriors bow toggle mode"
 
 }
