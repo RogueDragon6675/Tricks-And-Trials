@@ -1,14 +1,3 @@
-/enchant Dev tricksandtrials:quick_shot
-/enchant Dev tricksandtrials:homing 5
-/enchant Dev tricksandtrials:homing 3
-/enchant Dev tricksandtrials:quick_shot 5
-/weather rain
-/enchant Dev tricksandtrials:homing 5
-/hi
-/enchant Dev tricksandtrials:quick_shot 5
-/gamerule keepInventory true
-/gamemode creative
-/gamemode survival
 /gamemode creative
 /clear
 /locate structure minecraft:village_plains
@@ -48,3 +37,14 @@
 /enchant Dev tricksandtrials:homing 5
 /enchant Dev tricksandtrials:quick_shot 5
 /clear
+/enchant Dev tricksandtrials:quick_shot 5
+/enchant Dev tricksandtrials:homing 5
+/locate structure minecraft:village_plains
+/tp @s -272 ~ 624
+/enchant Dev tricksandtrials:homing 10
+/enchant Dev tricksandtrials:homing 5
+/enchant Dev tricksandtrials:quick_shot 5
+/clear
+/enchant Dev tricksandtrials:quick_shot
+/enchant Dev tricksandtrials:homing 5
+/enchant Dev tricksandtrials:quick_shot 5
