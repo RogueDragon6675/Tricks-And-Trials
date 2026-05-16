@@ -70,12 +70,14 @@ public class WarriorsBow extends CrossbowItem {
     }
 
     private void shootRailgun(ServerLevel level, LivingEntity shooter, InteractionHand hand, ItemStack weapon,
-                              List<ItemStack> projectileItems, float velocity, float inaccuracy,
+                              List<ItemStack> projectileItems, float velocity, float inaccuracy, 
                               boolean isCrit, @Nullable LivingEntity target) {
         float f = EnchantmentHelper.processProjectileSpread(level, weapon, shooter, 0.0F);
         float f1 = projectileItems.size() == 1 ? 0.0F : 2.0F * f / (float)(projectileItems.size() - 1);
         float f2 = (float)((projectileItems.size() - 1) % 2) * f1 / 2.0F;
         float f3 = 1.0F;
+
+
 
         for (int i = 0; i < projectileItems.size(); ++i) {
             ItemStack itemstack = projectileItems.get(i);
@@ -84,7 +86,7 @@ public class WarriorsBow extends CrossbowItem {
                 f3 = -f3;
                 for (int j = 0; j < 100; ++j) {
                     Projectile projectile = this.createProjectile(level, shooter, weapon, itemstack, isCrit);
-                    this.shootProjectile(shooter, projectile, i, velocity, inaccuracy * 10, f4, target);
+                    this.shootProjectile(shooter, projectile, i, velocity * 500, 0, f4, target);
                     level.addFreshEntity(projectile);
                 }
                 weapon.hurtAndBreak(this.getDurabilityUse(itemstack), shooter, LivingEntity.getSlotForHand(hand));
