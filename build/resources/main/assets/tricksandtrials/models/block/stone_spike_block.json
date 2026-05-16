@@ -1,7 +1,0 @@
-{
-  "parent": "tricksandtrials:block/template_spike",
-  "textures": {
-    "all": "minecraft:block/stone",
-    "particle": "minecraft:block/stone"
-  }
-}

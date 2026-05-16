@@ -54,6 +54,7 @@ public class TricksandTrials {
             event.accept(ModItems.NUKE);
             event.accept(ModItems.WARRIORS_AXE);
             event.accept(ModItems.WARRIORS_BOW);
+            event.accept(ModItems.WARRIOR_BOSS_SPAWN_EGG);
         }
         if (event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
             event.accept(ModBlocks.WOOD_SPIKE_BLOCK);
