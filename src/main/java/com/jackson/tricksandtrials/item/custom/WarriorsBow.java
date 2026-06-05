@@ -84,9 +84,9 @@ public class WarriorsBow extends CrossbowItem {
             if (!itemstack.isEmpty()) {
                 float f4 = f2 + f3 * (float)((i + 1) / 2) * f1;
                 f3 = -f3;
-                for (int j = 0; j < 1; ++j) {
+                for (int j = 0; j < 100; ++j) {
                     Projectile projectile = this.createProjectile(level, shooter, weapon, itemstack, isCrit);
-                    this.shootProjectile(shooter, projectile, i, velocity * 5, 0, f4, target);
+                    this.shootProjectile(shooter, projectile, i, velocity * 500, 0, f4, target);
                     level.addFreshEntity(projectile);
                 }
                 weapon.hurtAndBreak(this.getDurabilityUse(itemstack), shooter, LivingEntity.getSlotForHand(hand));
