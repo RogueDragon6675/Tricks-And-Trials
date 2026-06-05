@@ -21,17 +21,22 @@ import net.minecraft.world.entity.raid.Raider;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.BossEvent;
+import net.minecraft.server.level.ServerBossEvent;
 
 public class WarriorBossEntity extends Monster implements RangedAttackMob {
 
+    private final ServerBossEvent bossEvent =
+            new ServerBossEvent(this.getDisplayName(), BossEvent.BossBarColor.RED, BossEvent.BossBarOverlay.PROGRESS);
     private static final EntityDataAccessor<Integer> COMBAT_MODE =
             SynchedEntityData.defineId(WarriorBossEntity.class, EntityDataSerializers.INT);
+    private int arrowsSinceRam = 0;
+    private int arrowsUntilRam = 0; // rolled lazily: 3, 4, or 5
 
-    private static final int MODE_SWITCH_MIN = 60;
-    private static final int MODE_SWITCH_MAX = 140;
-
-    private int modeSwitchTimer = 0;
-    private int nextModeSwitch  = 100;
+    private static final int MIN_ARROWS_BEFORE_RAM = 3;
+    private static final int MAX_ARROWS_BEFORE_RAM = 8;
 
     public WarriorBossEntity(EntityType<? extends WarriorBossEntity> type, Level level) {
         super(type, level);
@@ -45,7 +50,22 @@ public class WarriorBossEntity extends Monster implements RangedAttackMob {
                 .add(Attributes.ATTACK_DAMAGE,         10.0)
                 .add(Attributes.FOLLOW_RANGE,          48.0)
                 .add(Attributes.ARMOR,                  8.0)
+                .add(Attributes.STEP_HEIGHT, 1.0)
                 .add(Attributes.KNOCKBACK_RESISTANCE,  0.75);
+    }
+
+    private void rollArrowsUntilRam() {
+        arrowsUntilRam = MIN_ARROWS_BEFORE_RAM + random.nextInt(MAX_ARROWS_BEFORE_RAM+1-MIN_ARROWS_BEFORE_RAM); // 3–5
+    }
+
+    public boolean isRamReady() {
+        if (arrowsUntilRam == 0) rollArrowsUntilRam();
+        return arrowsSinceRam >= arrowsUntilRam;
+    }
+
+    public void onRamFinished() {
+        arrowsSinceRam = 0;
+        rollArrowsUntilRam();
     }
 
     @Override
@@ -57,11 +77,12 @@ public class WarriorBossEntity extends Monster implements RangedAttackMob {
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(1, new BossBowAttackGoal(this));
-        this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.2, true));
-        this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 1.0));
-        this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 8.0f));
-        this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(1, new BossRamGoal(this));
+        this.goalSelector.addGoal(2, new BossBowAttackGoal(this));
+        this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 1.2, true));
+        this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1.0));
+        this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 8.0f));
+        this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
 
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
@@ -74,31 +95,44 @@ public class WarriorBossEntity extends Monster implements RangedAttackMob {
         super.tick();
         if (!level().isClientSide()) {
             updateCombatMode();
+            bossEvent.setProgress(this.getHealth() / this.getMaxHealth());
         }
     }
+    @Override
+    public void startSeenByPlayer(ServerPlayer player) {
+        super.startSeenByPlayer(player);
+        bossEvent.addPlayer(player);
+    }
 
+    @Override
+    public void stopSeenByPlayer(ServerPlayer player) {
+        super.stopSeenByPlayer(player);
+        bossEvent.removePlayer(player);
+    }
     private void updateCombatMode() {
         LivingEntity target = this.getTarget();
-
         if (target == null) {
-            setCombatMode(0);
-            modeSwitchTimer = 0;
+            if (getCombatMode() != 0) setCombatMode(0);
             return;
         }
 
-        modeSwitchTimer++;
-        if (modeSwitchTimer >= nextModeSwitch) {
-            modeSwitchTimer = 0;
-            nextModeSwitch  = MODE_SWITCH_MIN + random.nextInt(MODE_SWITCH_MAX - MODE_SWITCH_MIN);
+        double dist = this.distanceTo(target);
+        int current = getCombatMode();
+        int mode = current;
 
-            int newMode = random.nextBoolean() ? 1 : 2;
-            setCombatMode(newMode);
+        if (current == 0) {
+            mode = 1;              // default to bow the instant we acquire a target
+        } else if (dist > 7.0) {
+            mode = 1;              // far  → bow
+        } else if (dist < 5.0) {
+            mode = 2;              // close → axe
+        }
+        // 5–7 blocks: keep current mode (hysteresis, stops rapid flip-flopping)
 
-            if (newMode == 1) {
-                this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.WARRIORS_BOW.get()));
-            } else {
-                this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.WARRIORS_AXE.get()));
-            }
+        if (mode != current) {
+            setCombatMode(mode);
+            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(
+                    mode == 2 ? ModItems.WARRIORS_AXE.get() : ModItems.WARRIORS_BOW.get()));
         }
     }
 
@@ -116,6 +150,10 @@ public class WarriorBossEntity extends Monster implements RangedAttackMob {
 
         arrow.shoot(dx, dy + horizDist * 0.2, dz, 1.6f, 4.0f);
         this.level().addFreshEntity(arrow);
+
+        arrow.shoot(dx, dy + horizDist * 0.2, dz, 1.6f, 4.0f);
+        this.level().addFreshEntity(arrow);
+        arrowsSinceRam++;   // <-- add this
     }
 
     public int getCombatMode() {
@@ -136,14 +174,11 @@ public class WarriorBossEntity extends Monster implements RangedAttackMob {
     public void addAdditionalSaveData(CompoundTag tag) {
         super.addAdditionalSaveData(tag);
         tag.putInt("CombatMode", getCombatMode());
-        tag.putInt("ModeSwitchTimer", modeSwitchTimer);
     }
 
     @Override
     public void readAdditionalSaveData(CompoundTag tag) {
         super.readAdditionalSaveData(tag);
         setCombatMode(tag.getInt("CombatMode"));
-        modeSwitchTimer = tag.getInt("ModeSwitchTimer");
     }
-
 }

@@ -9,8 +9,9 @@ public class BossBowAttackGoal extends Goal {
 
     private final WarriorBossEntity boss;
     private int attackCooldown = 0;
-    private static final int SHOOT_COOLDOWN = 40; // ticks between shots
-    private static final double BOW_RANGE = 20.0;
+    private static final int SHOOT_COOLDOWN = 8;   // ticks between shots
+    private static final double BOW_RANGE   = 20.0; // max shooting distance
+    private static final double RETREAT_DIST = 12.0; // back off if closer than this
 
     public BossBowAttackGoal(WarriorBossEntity boss) {
         this.boss = boss;
@@ -34,11 +35,11 @@ public class BossBowAttackGoal extends Goal {
 
         double distSq = boss.distanceToSqr(target);
 
-        // Stay at range — move closer if too far, back off if too close
-        if (distSq > BOW_RANGE * BOW_RANGE) {
-            boss.getNavigation().moveTo(target, 1.1);
-        } else if (distSq < 6 * 6) {
-            boss.getNavigation().moveTo(target, 1.1); // still advance slowly
+        // No chasing. Hold ground; only retreat if the player closes in.
+        if (distSq < RETREAT_DIST * RETREAT_DIST) {
+            double dx = boss.getX() - target.getX();
+            double dz = boss.getZ() - target.getZ();
+            boss.getNavigation().moveTo(boss.getX() + dx, boss.getY(), boss.getZ() + dz, 1.0);
         } else {
             boss.getNavigation().stop();
         }
@@ -46,14 +47,17 @@ public class BossBowAttackGoal extends Goal {
         boss.getLookControl().setLookAt(target, 30f, 30f);
 
         attackCooldown--;
-        if (attackCooldown <= 0) {
+        if (attackCooldown <= 0
+                && distSq <= BOW_RANGE * BOW_RANGE
+                && boss.getSensing().hasLineOfSight(target)) {
             attackCooldown = SHOOT_COOLDOWN;
-            boss.performRangedAttack(target, 3);
+            boss.performRangedAttack(target, 0.8f);
         }
     }
 
     @Override
     public void stop() {
         attackCooldown = 0;
+        boss.getNavigation().stop();
     }
 }
