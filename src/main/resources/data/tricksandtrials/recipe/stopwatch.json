@@ -1,19 +1,32 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "#N#",
+    "DND",
     "ECE",
     "OgO"
   ],
   "key": {
-    "#": "minecraft:diamond",
-    "N": "minecraft:nether_star",
-    "E": "minecraft:end_crystal",
-    "C": "minecraft:clock",
-    "O": "minecraft:obsidian",
-    "g": "minecraft:gold_ingot"
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    },
+    "E": {
+      "item": "minecraft:end_crystal"
+    },
+    "C": {
+      "item": "minecraft:clock"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "g": {
+      "item": "minecraft:gold_ingot"
+    }
   },
-  "result":
-  {  "count": 1,
-  "id": "tricksandtrials:stopwatch"}
+  "result": {
+    "count": 1,
+    "id": "tricksandtrials:stopwatch"
+  }
 }

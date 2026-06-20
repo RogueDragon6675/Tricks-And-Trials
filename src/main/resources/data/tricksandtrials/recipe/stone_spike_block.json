@@ -1,12 +1,12 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " # ",
-    "#/#",
+    " S ",
+    "S/S",
     "___"
   ],
   "key": {
-    "#": {
+    "S": {
       "item": "minecraft:cobblestone"
     },
     "/": {

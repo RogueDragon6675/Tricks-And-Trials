@@ -6,12 +6,24 @@
     "nTn"
   ],
   "key": {
-    "n": "minecraft:netherite_ingot",
-    "N": "minecraft:nether_star",
-    "Q": "minecraft:quartz",
-    "M": "minecraft:mace",
-    "T": "minecraft:tnt"
+    "n": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    },
+    "Q": {
+      "item": "minecraft:quartz"
+    },
+    "M": {
+      "item": "minecraft:mace"
+    },
+    "T": {
+      "item": "minecraft:tnt"
+    }
   },
-  "result": {  "count": 1,
-    "id": "tricksandtrials:boommace"}}
+  "result": {
+    "count": 1,
+    "id": "tricksandtrials:boommace"
+  }
 }

@@ -3,8 +3,8 @@
   "step": "surface_structures",
   "terrain_adaptation": "beard_thin",
   "start_pool": "tricksandtrials:village/start_pool",
-  "size": 6,
-  "max_distance_from_center": 80,
+  "size": 20,
+  "max_distance_from_center": 128,
   "use_expansion_hack": false,
   "spawn_overrides": {},
   "biomes": "#minecraft:has_structure/village"

@@ -1,12 +1,12 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " # ",
-    "#/#",
+    " P ",
+    "P/P",
     "___"
   ],
   "key": {
-    "#": {
+    "P": {
       "tag": "minecraft:planks"
     },
     "/": {

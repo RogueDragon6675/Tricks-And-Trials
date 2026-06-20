@@ -1,16 +1,26 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "#A#",
+    "TAT",
     "GLG",
-    "#E#"
+    "TET"
   ],
   "key": {
-    "#": "minecraft:tnt",
-    "A": "minecraft:arrow",
-    "G": "minecraft:gunpowder",
-    "L": "minecraft:lead",
-    "E": "minecraft:end_crystal"
+    "T": {
+      "item": "minecraft:tnt"
+    },
+    "A": {
+      "item": "minecraft:arrow"
+    },
+    "G": {
+      "item": "minecraft:gunpowder"
+    },
+    "L": {
+      "item": "minecraft:lead"
+    },
+    "E": {
+      "item": "minecraft:end_crystal"
+    }
   },
   "result": {
     "count": 3,

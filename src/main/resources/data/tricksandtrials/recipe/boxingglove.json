@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "key": {
-    "#": {
+    "W": {
       "item": "minecraft:red_wool"
     },
     "/": {
@@ -12,9 +12,9 @@
     }
   },
   "pattern": [
-    " # ",
-    "#/#",
-    "S#S"
+    " W ",
+    "W/W",
+    "SWS"
   ],
   "result": {
     "count": 1,

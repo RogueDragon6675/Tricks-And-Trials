@@ -6,6 +6,7 @@
   "item.tricksandtrials.nuke": "Nuke Arrow",
   "item.tricksandtrials.warriorsaxe": "Warriors Axe",
   "item.tricksandtrials.warriorsbow": "Warriors Bow",
+  "item.tricksandtrials.warrior_boss_spawn_egg": "Warrior Boss Spawn Egg",
   "block.tricksandtrials.wood_spike_block": "Wood Spike Block",
   "block.tricksandtrials.stone_spike_block": "Stone Spike Block",
   "block.tricksandtrials.gold_spike_block": "Gold Spike Block",
@@ -16,6 +17,7 @@
   "enchantment.tricksandtrials.quick_shot.desc": "Shoots arrows automatically like a minigun",
   "enchantment.tricksandtrials.homing": "Homing",
   "enchantment.tricksandtrials.homing.desc": "Shoots arrows that lock onto the nearets entity",
-  "key.tricksandtrials.bow": "Warriors bow toggle mode"
+  "key.tricksandtrials.bow": "Warriors bow toggle mode",
+  "entity.tricksandtrials.warrior_boss": "Warrior Boss"
 
 }
